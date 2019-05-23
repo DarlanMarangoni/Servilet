@@ -9,21 +9,28 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Java Standart Taglib</title>
+<title>Lista empresas</title>
 </head>
-<body>
-	<h3>Lista de empresas:</h3>
-
-	<ul>	
-		<c:forEach items="${empresas}" var="empresa">
-			
-			<li>
-				${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" /> 
-				<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">remove</a>
-				<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">editar</a>
-			</li>
-		</c:forEach>
-	</ul>
-
-</body>
+	<body>
+		
+		<c:import url="logout-parsial.jsp"/>
+	
+		Usuario Logado: ${usuarioLogado.login}
+		<br>
+		<br>
+		<br>
+		<h3>Lista de empresas:</h3>
+	
+		<ul>	
+			<c:forEach items="${empresas}" var="empresa">
+				
+				<li>
+					${empresa.nome} - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy" /> 
+					<a href="/gerenciador/entrada?acao=RemoveEmpresa&id=${empresa.id}">remove</a>
+					<a href="/gerenciador/entrada?acao=MostraEmpresa&id=${empresa.id}">editar</a>
+				</li>
+			</c:forEach>
+		</ul>
+	
+	</body>
 </html>

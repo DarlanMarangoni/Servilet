@@ -5,18 +5,20 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Nova empresa</title>
 </head>
-<body>
-
-	<form   action="${linkEntradaServlet}" method="post">
+	<body>
 	
-		Nome <input type="text" name="nome"/>
-		Data de Abertura <input type="text" name="dataAbertura"/>
-		<input type="hidden" name="acao" value="NovaEmpresa">
-		<input type="submit"/>
+		<c:import url="logout-parsial.jsp"/>
 	
-	</form>
+		<form   action="${linkEntradaServlet}" method="post">
+		
+			Nome <input type="text" name="nome"/>
+			Data de Abertura <input type="text" name="dataAbertura"/>
+			<input type="hidden" name="acao" value="NovaEmpresa">
+			<input type="submit"/>
+		
+		</form>
 
 </body>
 </html>

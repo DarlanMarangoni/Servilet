@@ -7,19 +7,21 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Altera empresa</title>
 </head>
-<body>
-
-	<form   action="${linkEntradaServlet}" method="post">
+	<body>
 	
-		Nome <input type="text" name="nome" value="${empresa.nome}"/>
-		Data de Abertura <input type="text" name="dataAbertura" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>"/>
-		<input type="hidden" name="id" value="${empresa.id}"/>
-		<input type="hidden" name="acao" value="AlteraEmpresa"/>
-		<input type="submit"/>
+		<c:import url="logout-parsial.jsp"/>
 	
-	</form>
-
-</body>
+		<form   action="${linkEntradaServlet}" method="post">
+		
+			Nome <input type="text" name="nome" value="${empresa.nome}"/>
+			Data de Abertura <input type="text" name="dataAbertura" value="<fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>"/>
+			<input type="hidden" name="id" value="${empresa.id}"/>
+			<input type="hidden" name="acao" value="AlteraEmpresa"/>
+			<input type="submit"/>
+		
+		</form>
+	
+	</body>
 </html>
